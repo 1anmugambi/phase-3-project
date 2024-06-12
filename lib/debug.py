@@ -1,5 +1,5 @@
-from models import Base, engine
-from models.location import Location
+from lib.models import Base, engine
+from lib.models.location import Location
 
 if __name__ == "__main__":
     Base.metadata.create_all(engine)

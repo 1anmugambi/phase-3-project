@@ -1,12 +1,13 @@
-# lib/cli.py
+from lib.helpers import add_location, view_locations, exit_program
 
-from helpers import exit_program, add_location, view_locations
-
-
+# Main function that runs the CLI
 def main():
     while True:
+        # Display the menu and get user input
         menu()
         choice = input("> ")
+
+        # Execute functions based on user input
         if choice == "0":
             exit_program()
         elif choice == "1":
@@ -16,13 +17,13 @@ def main():
         else:
             print("Invalid choice")
 
-
+# Function to display the menu options
 def menu():
     print("Please select an option:")
     print("0. Exit the program")
     print("1. Add a location")
-    print("2. View all locations")
+    print("2. View locations")
 
-
+# Entry point of the program
 if __name__ == "__main__":
     main()

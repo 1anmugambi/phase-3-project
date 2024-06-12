@@ -1,11 +1,10 @@
-# lib/models/__init__.py
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from .location import Location, Base
+from lib.base import Base  # Ensure this import matches the new base.py
+from lib.models.location import Location
 
-engine = create_engine('sqlite:///locations.db')
-Base.metadata.create_all(engine)
+DATABASE_URL = "sqlite:///locations.db"
 
+engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 session = Session()
