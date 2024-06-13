@@ -1,4 +1,6 @@
 import tkinter as tk
+
+import tkinter as tk
 from tkinter import messagebox
 from lib.helpers import add_location, view_locations
 from lib.models import session, Location
@@ -73,3 +75,4 @@ exit_button.pack(pady=20)
 
 # Start the main loop
 root.mainloop()
+

@@ -1,0 +1,17 @@
+-- Create the table
+CREATE TABLE locations (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    latitude REAL,
+    longitude REAL
+);
+
+-- Insert example data
+INSERT INTO locations (name, latitude, longitude)
+VALUES ('Nairobi', -1.2864, 36.8172),
+       ('Mombasa', -4.0500, 39.6667),
+       ('Nakuru', -0.3000, 36.0667),
+       ('Eldoret', 0.5167, 35.2833);
+
+-- Commit the changes
+.quit
