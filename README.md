@@ -15,17 +15,44 @@ This project is a CLI application that allows users to add and view locations us
     pipenv shell
     ```
 
-## Usage
-
-Run the CLI application:
+## Running the CLI Application
+To run the CLI application, use the following command:
 
 ```bash
 python lib/cli.py
+```
 
-## Follow the prompts to add and view locations.
+Follow the prompts in the CLI to add and view locations.
 
-Project Structure
-lib/cli.py: The main entry point for the CLI application.
-lib/helpers.py: Contains helper functions for adding and viewing locations.
+## Interacting with the Database
+You can interact with the SQLite database directly using the SQLite command-line tool. Here are the basic commands:
+
+Access the SQLite command-line interface:
+
+```bash
+sqlite3 locations.db
+```
+## Example commands:
+
+View all locations:
+
+```sql
+SELECT * FROM locations;
+```
+
+This will display all entries in the locations table.
+
+### Insert a new location:
+
+```sql
+INSERT INTO locations (name, latitude, longitude) VALUES ('Location Name', latitude_value, longitude_value);
+```
+
+Replace 'Location Name', latitude_value, and longitude_value with your actual data.
+
+## Project Structure
+
+lib/cli.py: Main entry point for the CLI application.
+lib/helpers.py: Helper functions for adding and viewing locations.
 lib/models/location.py: Defines the Location model using SQLAlchemy.
-lib/models/__init__.py: Sets up the database connection and session.
+lib/models/init.py: Sets up the database connection and session.
