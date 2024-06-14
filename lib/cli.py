@@ -1,10 +1,11 @@
+# lib/cli.py
+
 import sys
 import os
 
-# Append the absolute path of the project directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from lib.helpers import add_location, view_locations, exit_program, delete_location
+from lib.helpers import add_location, delete_location, view_locations, exit_program
 
 def main():
     while True:
@@ -19,11 +20,18 @@ def main():
             exit_program()
             break
         elif choice == "1":
-            add_location()
+            name = input("Enter location name: ")
+            latitude = float(input("Enter latitude: "))
+            longitude = float(input("Enter longitude: "))
+            add_location(name, latitude, longitude)
         elif choice == "2":
             view_locations()
         elif choice == "3":
-            delete_location()    
+            location_id = int(input("Enter location ID to delete: "))
+            if delete_location(location_id):
+                print("Location deleted successfully.")
+            else:
+                print("Location not found.")
         else:
             print("Invalid choice. Please try again.")
 
